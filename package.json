@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dkm-coder/map-marklet-back-end/issues"
   },
-  "homepage": "https://github.com/dkm-coder/map-marklet-back-end#readme"
+  "homepage": "https://github.com/dkm-coder/map-marklet-back-end#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
