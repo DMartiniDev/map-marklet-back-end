@@ -3,6 +3,8 @@ var admin = require("firebase-admin");
 var serviceAccount = require("./privateKey.json");
 const app = express();
 
+var port = process.env.PORT || 3000;
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://map-marklet-b068f.firebaseio.com"
@@ -19,4 +21,4 @@ app.get('/:user', function (req, res) {
   });
 })
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
