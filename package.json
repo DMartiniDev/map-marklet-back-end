@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/dkm-coder/map-marklet-back-end/issues"
   },
-  "homepage": "https://github.com/dkm-coder/map-marklet-back-end#readme"
+  "homepage": "https://github.com/dkm-coder/map-marklet-back-end#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "firebase-admin": "^5.12.0"
+  },
+  "engines": {
+    "node": "9.5.0"
+  }
 }
