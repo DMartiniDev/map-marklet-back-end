@@ -42,13 +42,12 @@ app.get('/:user', function (req, res) {
 
 app.put('/:user', function (req, res) {
   // Sanitize the name of the user
-  userName = req.params.user.replace(/\./g, "-")
+  userName = req.params.user.replace(/\./g, "-");
 
   // Edit data in the database
   defaultDatabase.ref().child('users').child(userName).set(req.body);
 
-  data = JSON.stringify(req.body) ;
-  res.send(`The PUT endpoint has been hit for the user: ${req.params.user}\n\n${data}`);
+  res.send("OK");
 })
 
 
