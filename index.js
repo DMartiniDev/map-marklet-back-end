@@ -41,7 +41,8 @@ app.get('/:user', function (req, res) {
 })
 
 app.put('/:user', function (req, res) {
-  res.send(`The PUT endpoint has been hit for the user: ${req.params.user}`);
+  data = JSON.stringify(req.body) ;
+  res.send(`The PUT endpoint has been hit for the user: ${req.params.user}\n\n${data}`);
 })
 
 
