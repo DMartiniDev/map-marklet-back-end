@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 var admin = require("firebase-admin");
 const cors = require('cors');
 require('dotenv').config()
@@ -6,6 +7,7 @@ const app = express();
 
 
 app.use(cors());
+app.use(bodyParser.json());
 
 var serviceAccount = {
   "type": process.env.type,
@@ -37,5 +39,16 @@ app.get('/:user', function (req, res) {
     res.send(data.val());
   });
 })
+
+app.put('/:user', function (req, res) {
+  // Sanitize the name of the user
+  userName = req.params.user.replace(/\./g, "-");
+
+  // Edit data in the database
+  defaultDatabase.ref().child('users').child(userName).set(req.body);
+
+  res.send("OK");
+})
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
