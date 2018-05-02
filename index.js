@@ -38,4 +38,9 @@ app.get('/:user', function (req, res) {
   });
 })
 
+app.put('/:user', function (req, res) {
+  res.send(`The PUT endpoint has been hit for the user: ${req.params.user}`);
+})
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
